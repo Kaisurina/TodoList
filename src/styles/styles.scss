@@ -141,10 +141,17 @@ $mediumBlue: rgba(0, 0, 205, 1);
           }
           &.active {
             &::after {
-              content: url(../img/checkmark.svg);
-              top: 12px;
-              right: 167px;
+              content: "";
               position: absolute;
+              left: 205px;
+              top: 13px;
+              width: 12px;
+              height: 24px;
+              border: solid rgba(40, 50, 66, 0.7);
+              border-width: 0 4px 4px 0;
+              transform: rotate(45deg);
+              opacity: 1;
+              transition: opacity 0.25s ease, top 0.25s ease;
             }
             position: relative;
             color: #fff;
