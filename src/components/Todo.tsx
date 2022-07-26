@@ -5,7 +5,6 @@ import TodoHeader from "./TodoHeader";
 import { TodoProps } from "../interfaces";
 
 function Todo({ listTodo }: TodoProps) {
-  console.log(listTodo);
   return (
     <div className="wrapper">
       <TodoHeader />
