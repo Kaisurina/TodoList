@@ -4,8 +4,15 @@ import { Todos } from "../interfaces";
 class Todo {
   todos: Todos[] = [
     { id: 1, title: "Сделать домашнее задание", completed: false },
-    { id: 2, title: "Выгулять собаку", completed: false },
+    { id: 2, title: "Тестовое задание", completed: false },
     { id: 3, title: "Сходить в магазин", completed: true },
+    { id: 4, title: "Позвонить маме", completed: false },
+    {
+      id: 5,
+      title: "Do something nice for someone I care about",
+      completed: true,
+    },
+    { id: 6, title: "Сделать что-нибудь", completed: false },
   ];
 
   constructor() {
@@ -21,11 +28,10 @@ class Todo {
   addTodo(todo: string) {
     const newTodo: Todos = {
       id: Number(new Date()),
-      title: todo,
+      title: todo || "Пустая задача",
       completed: false,
     };
     this.todos.push(newTodo);
-    console.log(newTodo);
   }
 
   removeTodo(id: number) {
@@ -33,11 +39,9 @@ class Todo {
   }
 
   statusTodo(id: number) {
-    this.todos.map((el) => {
-      if (el.id === id) {
-        el.completed = !el.completed;
-      }
-    });
+    this.todos.map((el) =>
+      el.id === id ? (el.completed = !el.completed) : null
+    );
   }
 
   changeInputData(value: string) {

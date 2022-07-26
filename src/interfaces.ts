@@ -3,3 +3,6 @@ export interface Todos {
   title: string;
   completed: boolean;
 }
+export interface TodoProps {
+  listTodo?: Todos[];
+}
